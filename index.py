@@ -8,7 +8,7 @@ from langchain.llms.openai import OpenAI
 
 # Define a simple Streamlit app
 st.title("Ask Llama")
-query = st.text_input("What would you like to ask? (source: data/paul_graham_essay.txt)", "")
+query = st.text_input("What would you like to ask? (source: data/consolidated_appropriation_act_of_2023.txt)", "")
 
 # If the 'Submit' button is clicked
 if st.button("Submit"):
@@ -17,7 +17,7 @@ if st.button("Submit"):
     else:
         try:
             # This example uses text-davinci-003 by default; feel free to change if desired
-            llm_predictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="text-davinci-003"))
+            llm_predictor = LLMPredictor(llm=OpenAI(temperature=1.0, model_name="gpt-4"))
 
             # Configure prompt parameters and initialise helper
             max_input_size = 4096
